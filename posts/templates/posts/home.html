@@ -1,0 +1,13 @@
+{% extends 'posts/base.html' %}
+{% block content %}
+     {% for x in object_list %}
+     <div  class='list'>
+           <h3 >{{x.title}}</h3>
+           <p>{{x.date}} &nbsp; - &nbsp; <a href="" style="text-decoration: none;">{{x.author}}</a></p>
+           <p>{{x.body}}</p>
+           <a href="{% url 'detail_page' x.pk %}" class="btn btn-secondary">View Blog</a>
+               <hr>
+      </div>
+     {% endfor %}
+    
+{% endblock %}

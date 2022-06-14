@@ -1,0 +1,12 @@
+{% extends 'posts/base.html' %}
+{% block content %}
+<h3 style= "padding-left:40px;padding-top: 30px;padding-bottom: 20px;">Login</h3>
+<div class="add">
+<form method = "POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <br>
+    <button type="submit" class="btn btn-secondary" onclick="">Login</button>
+</form>
+</div>
+{% endblock %}

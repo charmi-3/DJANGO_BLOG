@@ -1,0 +1,15 @@
+{% extends 'posts/base.html' %}
+{% block content %}
+<div  class='list'>
+    <h3 >{{object.title}}</h3>
+    <br>
+    <p>{{object.date}} &nbsp; - &nbsp; <a href="" style="text-decoration: none;">{{object.author}}</a></p>
+    <p>{{object.body}}</p>
+    {% if user.is_authenticated %}
+    {% if object.author.id == user.id %}
+    <a href="{% url 'edit_page' object.pk %}" class="btn btn-secondary">Edit Blog</a>
+    <a href="{% url 'delete_page' object.pk %}" class="btn btn-secondary">Delete Blog</a>
+    {% endif %}
+{% endif %}
+</div>
+{% endblock %} 

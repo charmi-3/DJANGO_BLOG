@@ -1,0 +1,16 @@
+{% extends 'posts/base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<h3 style= "padding-left:40px;padding-top: 30px;padding-bottom: 20px;">Add Post</h3>
+<div class="add">
+<form method = "POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <br>
+    <button type="submit" class="btn btn-secondary" onclick="">Save</button>
+</form>
+</div>
+{% else %}
+<h2>You are not logged in</h2>
+{% endif %}
+{% endblock %}
